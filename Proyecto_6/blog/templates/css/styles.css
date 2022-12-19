@@ -1,23 +1,23 @@
-   /*MAIN*/
+/*MAIN*/
 .wrap {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background: url(../img/ladrillos.jpg);
-    background-size: cover;
-    background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: url(../img/ladrillos.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .wrap-text {
-color: #fff;
-text-align: center;
-width: 50%;
+  color: #fff;
+  text-align: center;
+  width: 50%;
 }
 
 .transparente {
-   opacity: 0.75;
+  opacity: 0.75;
 }
 
 /* PERSONALIZAR EL CARRUSEL
@@ -30,27 +30,31 @@ width: 50%;
 
 */
 
-  /* Ya que posicionamos la imagen, necesitamos ayudar con el pie de foto 
+/* Ya que posicionamos la imagen, necesitamos ayudar con el pie de foto 
   .carousel-caption {
     bottom: 3rem;
     z-index: 10;
   }
   */
-  /* Declarar alturas debido al posicionamiento del elemento img 2q
+/* Declarar alturas debido al posicionamiento del elemento img 2q
   .carousel-item {
     height: 32rem;
   }
   */
 
-  /* Featurettes
+/* Featurettes
 ------------------------- */
 
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-  }
-  
-  /* Thin out the marketing headings */
-  /* rtl:begin:remove */
-  .featurette-heading {
-    letter-spacing: -.05rem;
-  }
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+.featurette-heading {
+  letter-spacing: -0.05rem;
+}
+
+.nosotros {
+  display: flex;
+}
