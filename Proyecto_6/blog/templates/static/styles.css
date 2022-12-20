@@ -1,0 +1,56 @@
+   /*MAIN*/
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url(../img/ladrillos.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrap-text {
+color: #fff;
+text-align: center;
+width: 50%;
+}
+
+.transparente {
+   opacity: 0.75;
+}
+
+/* PERSONALIZAR EL CARRUSEL
+-------------------------------------------------- */
+
+/* Clase base del carrusel 
+.carousel {
+    margin-bottom: 4rem;
+  }
+
+*/
+
+  /* Ya que posicionamos la imagen, necesitamos ayudar con el pie de foto 
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  */
+  /* Declarar alturas debido al posicionamiento del elemento img 2q
+  .carousel-item {
+    height: 32rem;
+  }
+  */
+
+  /* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  /* rtl:begin:remove */
+  .featurette-heading {
+    letter-spacing: -.05rem;
+  }
