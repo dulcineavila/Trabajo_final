@@ -3,7 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Post(models.Model):
-    autor = models.CharField (max_length= 25)
+    autor = models.CharField (max_length= 25, null = True)
     title = models.CharField (max_length=200)
     description = models.TextField(null=True)
     fecha_creacion= models.DateTimeField (default= timezone.now)
