@@ -8,6 +8,7 @@ class Post(models.Model):
     description = models.TextField(null=True)
     fecha_creacion= models.DateTimeField (default= timezone.now)
     fecha_publicacion = models.DateTimeField (blank=True, null=True)
+    slug = models.SlugField(max_length=250, unique_for_date='fecha_publicacion', null=True, unique=True)
 
     def publicar(self):
         self.fecha_publicacion = timezone.now()
