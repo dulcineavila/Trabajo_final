@@ -13,6 +13,7 @@ urlpatterns = [
     path("eliminar/<str:title>", views.Borrar_posteo,name='Bpost'),
     path('login', auth_views.LoginView.as_view(template_name='login.html') , name='login'),
     path('logout', auth_views.logout_then_login, name='logout'),
-    path('<slug:slug>/', PostDetail.as_view(), name='postdetail'),
     path('posteos',Posteo.as_view(), name='posteos'),
+    path('<slug:slug>/', PostDetail.as_view(), name='postdetail'),
+    
 ]
