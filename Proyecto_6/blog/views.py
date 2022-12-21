@@ -41,10 +41,10 @@ def Borrar_posteo(request,title):
 
 
 class Posteo(TemplateView):
-    template_name = "blog/index.html"
+    template_name = "posteos.html"
 
     def get_context_data(self, **kwargs):
-        context = super(Post, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["post"] = Post.objects.all()
         return context
     
@@ -53,14 +53,13 @@ class Posteo(TemplateView):
 
 class PostDetail(DetailView):
     model = Post
-    template_name = "blog/detail.html"
+    template_name = "postDetail.html"
     context_object_name='post'
 
     
     def get_context_data(self, **kwargs):
-        context = super(Post, self).get_context_data(**kwargs)
-        post = Post.objects.filter(slug=self.kwargs.get('slug'))
-        return context
+      context = super().get_context_data(**kwargs)
+      post = Post.objects.filter(slug=self.kwargs.get('slug'))
+      return context
     
-
 

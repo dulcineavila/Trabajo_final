@@ -1,0 +1,15 @@
+
+{% load static %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<h3>Detalles del post:</h3>
+<ul>
+  <li>
+  {{post.title}}
+  </li>
+  <li>
+  {{post.description}}
+</ul>
+
+{% endblock content %}
