@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.generic import TemplateView, DetailView
 from .models import Post
 from .forms import Postform
 
@@ -33,8 +34,33 @@ def Editar_posteo(request,title):
         return redirect('publicaciones')
     return render(request,'Post/editar.html', {'formulario':formulario})
 
-def Borrar_posteo(request,tittle):
-    post = Post.objects.get(tittle=tittle)
+def Borrar_posteo(request,title):
+    post = Post.objects.get(title=title)
     post.delete()
-    return redirect('publicaiones')
+    return redirect('publicaciones')
+
+
+class Posteo(TemplateView):
+    template_name = "blog/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(Post, self).get_context_data(**kwargs)
+        context["post"] = Post.objects.all()
+        return context
+    
+
+
+
+class PostDetail(DetailView):
+    model = Post
+    template_name = "blog/detail.html"
+    context_object_name='post'
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(Post, self).get_context_data(**kwargs)
+        post = Post.objects.filter(slug=self.kwargs.get('slug'))
+        return context
+    
+
 
