@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,40 +9,13 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/styles.css">
+ <link rel="{% static './css/styles.css' %}">
 
 </head>
 <body>
     
 <!--ENCABEZADO + LINKS-->
-<header class="row" style="background-color: #22445c;">
-    <nav class="navbar col-4 me-4">
-      <div class="container-fluid">
-        <a class="navbar-brand text-light ms-5" href="#">
-          <img src="./img/Logo.jpg" alt="Logo" width="100" height="80"
-            class="d-inline-block align-text-top rounded-circle border border-1">
-          Fundacion "Obrando en ti"
-        </a>
-      </div>
-    </nav>
-
-    <nav class="col me-4 mt-3 mb-3">
-      <ul class="nav nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link text-light" href="./index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Quienes somos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Como colaborar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-info" href="#">Contacto</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+{% include 'navbar.html' %}
 
   <!-- CONTACTANOS -->
   <div class="wrap">
