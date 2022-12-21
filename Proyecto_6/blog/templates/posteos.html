@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> {% block title %}Grupo 6 {% endblock title %}</title>
+    <title> {% block title %}Posteos {% endblock title %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
@@ -10,18 +10,32 @@
   <body>
      {% block content %}
      {% include 'navbar.html' %}
-     <h1>Pagina de posteos</h1>
-     <ul>
-      {% for p in post %}
-      <li>
-      <a href = "{% url 'postdetail' slug=p.slug %}">
-        {{p.title}}
-         </a>
-        {{p.autor}}
-        {{p.fecha_publicacion}}
-     
-    </li>
+     <h1>Posteos recientes</h1>
+     {% if user.is_authenticated %}
+     <a name="" id="" class="btn btn-success" href="{% url 'Cpost' %}" role="button" >Crear post</a>
+     {% endif %}
+      {% for p in post  %}
+      <div class="card-group">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="button" href="{% url 'postdetail' slug=p.slug %}">{{ p.title }}</h1>
+            <h5 class="card-text">Autor: {{ p.autor }}</h5>
+            <p class="card-text">
+              {{ p.description }}
+              <a href="{% url 'postdetail' slug=p.slug %}">ver mas</a>
+            </p>
+            <p class="card-text">{{ p.fecha_publicacion }}</p>
+            
+            {% if user.is_authenticated %}
+            <a name="" id="" class="btn btn-primary" href="{% url 'Epost' slug=p.slug %}" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" href="{% url 'Bpost' slug=p.slug %}" role="button">Borrar</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    
       {% endfor %}
+      
      {% endblock content %}
      </ul>
   </body>
