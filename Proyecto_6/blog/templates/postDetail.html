@@ -3,13 +3,15 @@
 
 {% block content %}
 {% include 'navbar.html' %}
-
-<h3>Detalles del post:</h3>
-<ul>
-  <li>
-  {{post.title}}
-  </li>
-  <li>
-  {{post.description}}
-</ul>
+<div class="card border-primary">
+  <div class="card-body">
+    <h1 class="button">{{ post.title }}</h1>
+    <p class="card-text">
+      {{ post.description }}
+    </p>
+    <div class="card-footer text-muted">
+      Autor: {{ post.autor }} | Fecha de publicacion: {{ post.fecha_publicacion }}
+    </div>
+  </div>
+</div>
 {% endblock content %}
