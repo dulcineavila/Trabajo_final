@@ -37,9 +37,17 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="/sumate">Sumate</a>
         </li>
+        
+        {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link text-light" href="login">Registrate</a>
+          <a class="nav-link text-light" href="logout">Desconectar</a>
         </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-light" href="login">Acceder</a>
+        </li>
+        {% endif %}
+
         <li class="nav-item">
           <a class="nav-link text-info" href="#">Posteos</a>
         </li>
