@@ -23,21 +23,21 @@ def Crear_posteo(request):
     formulario = Postform(request.POST or None, request.FILES or None)
     if(formulario.is_valid()):
         formulario.save()
-        return redirect('publicaciones')
+        return redirect('posteos')
     return render(request, "Post/crear.html", {'formulario': formulario})
 
-def Editar_posteo(request,title):
-    post = Post.objects.get(title=title)
-    formulario = Postform(request.POST or None, request.FILES or None, instance=post)
+def Editar_posteo(request,slug):
+    post = Post.objects.get(slug=slug)
+    formulario = Postform(request.POST or None, request.FILES or None,instance=post)
     if(formulario.is_valid() and request.POST):
         formulario.save()
-        return redirect('publicaciones')
+        return redirect('posteos')
     return render(request,'Post/editar.html', {'formulario':formulario})
 
-def Borrar_posteo(request,title):
-    post = Post.objects.get(title=title)
+def Borrar_posteo(request,slug):
+    post = Post.objects.get(slug=slug)
     post.delete()
-    return redirect('publicaciones')
+    return redirect('posteos')
 
 
 class Posteo(TemplateView):
