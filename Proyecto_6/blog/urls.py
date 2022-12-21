@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import PostDetail,Posteo
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path("eliminar/<str:title>", views.Borrar_posteo,name='Bpost'),
     path('login', auth_views.LoginView.as_view(template_name='registrate.html') , name='login'),
     path('logout', auth_views.logout_then_login, name='logout'),
+    path('<slug:slug>/', PostDetail.as_view(), name='postdetail'),
 ]
