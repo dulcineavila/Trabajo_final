@@ -18,7 +18,7 @@
   <header class="row" style="background-color: #22445c;">
     <nav class="navbar col-4 me-4">
       <div class="container-fluid">
-        <a class="navbar-brand text-light ms-5" href="#">
+        <a class="navbar-brand text-light ms-5" href="/">
           <img src="{% static 'Logo.jpg' %}" alt="Logo" width="100" height="80"
             class="d-inline-block align-text-top rounded-circle border border-1">
           Fundacion "Obrando en ti"
@@ -40,16 +40,16 @@
         
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link text-light" href="logout">Desconectar</a>
+          <a class="nav-link text-light" href="/logout">Desconectar</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link text-light" href="login">Acceder</a>
+          <a class="nav-link text-light" href="/login">Acceder</a>
         </li>
         {% endif %}
 
         <li class="nav-item">
-          <a class="nav-link text-info" href="posteos">Posteos</a>
+          <a class="nav-link text-info" href="/posteos">Posteos</a>
         </li>
       </ul>
     </nav>
