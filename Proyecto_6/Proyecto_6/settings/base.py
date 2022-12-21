@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS =[]
 
+#LOGIN CONF
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL ='inicio'
+#AUTH_USER_MODEL = 'auth_user'
+
 
 # Application definition
 
