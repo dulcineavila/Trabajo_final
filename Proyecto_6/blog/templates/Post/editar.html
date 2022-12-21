@@ -1,2 +1,19 @@
-<h1>EDITAR</h1>
+{% include 'navbar.html' %}
+{% if user.is_authenticated %}
+<div class="card">
+    <div class="card-header">
+        Editar informacion del Post
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del Post</h4>
+        {% include 'Post/form.html' %}
+    </div>
+</div>
+
+{% else %}
+<h1>
+<a href="/">Volver</a>
+</h1>
+
+{% endif %}
 <!--Editar publicaciones-->
